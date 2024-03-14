@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 function Digit(props: {number: number, isDecimalSeperator?: Boolean, incorrect?: Boolean}) {
-    const filled = props.number > 0;
+    const filled = props.number >= 0;
     if (props.isDecimalSeperator) {
         return <div className="p-3 bg-gray-600 rounded-lg text-gray-300 text-2xl mr-px">.</div>
     }
