@@ -75,6 +75,8 @@ export default function Test() {
         return () => {
           document.removeEventListener("keydown", handleKey);
         };
+      // Needs to be empty otherwise useEffect will start repeating
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
     return (
