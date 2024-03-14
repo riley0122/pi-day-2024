@@ -48,14 +48,29 @@ export default function Test() {
     let index = 0
 
     useEffect(() => {
-        document.addEventListener("keydown", (event) => {
-            if (allowedInputs.includes(event.key)){
-                handleKey(event, index);
-                index++;
-                forceUpdate();
-                count++;
-            }
-        });
+        if (process.env.NODE_ENV == "development"){
+            document.addEventListener("keydown", (event) => {
+                if (allowedInputs.includes(event.key)){
+                    if (count % 2 == 0){
+                        handleKey(event, index);
+                        index++;
+                        forceUpdate();
+                    }
+                    count++;
+                }
+            });
+
+        } else {
+            document.addEventListener("keydown", (event) => {
+                if (allowedInputs.includes(event.key)){
+                    handleKey(event, index);
+                    index++;
+                    forceUpdate();
+                    count++;
+                }
+            });
+        }
+
 
         return () => {
           document.removeEventListener("keydown", handleKey);
