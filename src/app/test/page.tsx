@@ -51,11 +51,9 @@ export default function Test() {
     useEffect(() => {
         document.addEventListener("keydown", (event) => {
             if (allowedInputs.includes(event.key)){
-                if(count % 2 == 0){
-                    handleKey(event, index);
-                    index++;
-                    forceUpdate();
-                }
+                handleKey(event, index);
+                index++;
+                forceUpdate();
                 count++;
             }
         });
