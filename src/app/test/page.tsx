@@ -34,7 +34,6 @@ function handleKey(event: any, index: number = 0) {
     if (lost || (!event.isComposing && !allowedInputs.includes(event.key))) {
         return event.preventDefault();
     }
-    console.log(index)
     if (event.key !== pi[index]) {
         lostOn = event.key as number;
         lost = true;
