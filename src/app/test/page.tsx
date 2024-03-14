@@ -49,7 +49,7 @@ export default function Test() {
     let index = 0
 
     useEffect(() => {
-        document.addEventListener("keyup", (event) => {
+        document.addEventListener("keydown", (event) => {
             if (allowedInputs.includes(event.key)){
                 if(count % 2 == 0){
                     handleKey(event, index);
@@ -61,7 +61,7 @@ export default function Test() {
         });
 
         return () => {
-          document.removeEventListener("keyup", handleKey);
+          document.removeEventListener("keydown", handleKey);
         };
       }, []);
 
