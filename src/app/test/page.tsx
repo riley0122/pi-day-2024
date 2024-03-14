@@ -79,8 +79,8 @@ export default function Test() {
                     })
                 }
                 {!lost ? (<Digit number={-1} />) : (<Digit number={lostOn} incorrect={true}/>)}
-
             </div>
+            {lost ? (<button onClick={()=>{window.location.reload()}} className="w-30 p-3 border-solid border-2 border-black rounded mt-3 hover:bg-slate-300 ease-in duration-75 hover:duration-150 absolute left-1/2 -translate-x-1/2 bottom-32">Retry</button>) : (<></>)}
             <span id="indicator" className="text-gray-600 absolute top-1/2 left-1/2 -translate-x-10 translate-y-8">^ type to place digit here</span>
         </div>
     );
