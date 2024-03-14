@@ -18,8 +18,8 @@ export default function Home() {
     <div className="w-lvw h-lvh text-center" id="wrapper">
       <PiDay />
       <div className="flex absolute right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 flex-col">
-        <button>Test your knowledge</button>
-        <button>Start memorizing</button>
+        <button className="w-30 p-3 border-solid border-2 border-black rounded mb-3 hover:bg-slate-300 ease-in duration-75 hover:duration-150">Test your knowledge</button>
+        <button className="w-30 p-3 border-solid border-2 border-black rounded mt-3 hover:bg-slate-300 ease-in duration-75 hover:duration-150">Start memorizing</button>
       </div>
     </div>
   );
